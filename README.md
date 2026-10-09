@@ -15,7 +15,7 @@ Plain HTML, CSS, and JavaScript. No framework, package install, backend, or buil
 - Formatted clipboard copy, HTML and text downloads, and a manual-copy fallback.
 - Save/load JSON profiles for different people or companies.
 - Starts with empty contact fields and helpful placeholders; **TRY EXAMPLE** loads sample details on demand.
-- Save profile, Load profile, and Clear all controls in the top navigation bar.
+- Save profile and Load profile controls in the top navigation bar; Clear all at the bottom of the details panel.
 - Optional browser-local draft saving. Clear all removes the saved draft as well.
 - Responsive layout, keyboard-accessible controls, and no analytics.
 - Light and dark themes with a sun/moon toggle in the top right.

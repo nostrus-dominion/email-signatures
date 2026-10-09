@@ -24,7 +24,6 @@
         <button type="button" id="save-profile" class="nav-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/></svg>Save profile</button>
         <button type="button" id="load-profile" class="nav-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m-4 4 4-4 4 4M4 15v6h16v-6"/></svg>Load profile</button>
         <input id="profile-file" type="file" accept="application/json,.json" hidden>
-        <button type="button" id="clear-button" class="nav-button danger"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14M10 11v6m4-6v6"/></svg>Clear all</button>
       </nav>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch to dark mode">
         <svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
@@ -101,7 +100,13 @@
             <label>Closing note / disclaimer <textarea name="footer" rows="3" maxlength="1200" placeholder="An optional tagline or short disclaimer"></textarea></label>
           </div></details>
 
-          <div class="editor-bottom"><label class="checkbox-label"><input id="remember-draft" type="checkbox"> Remember this draft on this device</label><p id="save-status" class="field-hint" role="status">Your details stay in this browser. No analytics or server uploads.</p></div>
+          <div class="editor-bottom">
+            <div class="editor-bottom-row">
+              <label class="checkbox-label"><input id="remember-draft" type="checkbox"> Remember this draft on this device</label>
+              <button type="button" id="clear-button" class="text-button danger clear-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14M10 11v6m4-6v6"/></svg>Clear all</button>
+            </div>
+            <p id="save-status" class="field-hint" role="status">Your details stay in this browser. No analytics or server uploads.</p>
+          </div>
         </form>
       </section>
 
