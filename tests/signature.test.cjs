@@ -3,20 +3,20 @@ const assert = require('node:assert/strict');
 const Signature = require('../signature.js');
 
 const person = {
-  name: 'Paul Example', title: 'Owner', company: 'Example & Co.',
-  phone: '+1 (540) 555-0100 ext. 42', mobile: '(540) 555-0120',
-  email: 'paul+work@example.com', website: 'example.com',
-  street: '123 Main Street', city: 'Fredericksburg', region: 'VA', postal: '22407',
+  name: 'John Doe', title: 'Marketing Manager', company: 'Example & Co.',
+  phone: '+1 (555) 555-0100 ext. 42', mobile: '(555) 555-0120',
+  email: 'john+work@example.com', website: 'example.com',
+  street: '123 Example Street', city: 'Anytown', region: 'ST', postal: '12345',
   country: 'United States'
 };
 const raster = 'data:image/png;base64,iVBORw0KGgo=';
 
 test('exports clickable contact details and a complete address', () => {
   const html = Signature.render(person);
-  assert.match(html, /href="tel:\+15405550100;ext=42"/);
-  assert.match(html, /href="mailto:paul%2Bwork@example.com"/);
+  assert.match(html, /href="tel:\+15555550100;ext=42"/);
+  assert.match(html, /href="mailto:john%2Bwork@example.com"/);
   assert.match(html, /href="https:\/\/example.com\/"/);
-  assert.match(html, /Fredericksburg, VA 22407<br>United States/);
+  assert.match(html, /Anytown, ST 12345<br>United States/);
   assert.match(html, /Example &amp; Co\./);
 });
 
@@ -111,9 +111,9 @@ test('invalid contact URLs remain readable without becoming links', () => {
 
 test('plain text includes all details without HTML entities or markup', () => {
   const text = Signature.plainText({ ...person, footer: 'Thanks & regards' });
-  assert.match(text, /Owner \| Example & Co\./);
-  assert.match(text, /Office: \+1 \(540\) 555-0100 ext\. 42/);
-  assert.match(text, /123 Main Street\nFredericksburg, VA 22407\nUnited States/);
+  assert.match(text, /Marketing Manager \| Example & Co\./);
+  assert.match(text, /Office: \+1 \(555\) 555-0100 ext\. 42/);
+  assert.match(text, /123 Example Street\nAnytown, ST 12345\nUnited States/);
   assert.match(text, /\n\nThanks & regards$/);
   assert.doesNotMatch(text, /&amp;|<table|<br>/);
 });
