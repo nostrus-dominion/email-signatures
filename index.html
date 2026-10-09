@@ -20,7 +20,12 @@
       <span>Signature<span class="brand-light"> Studio</span></span>
     </a>
     <div class="header-actions">
-      <a class="header-link" href="#installation">How to use it <span aria-hidden="true">↗</span></a>
+      <nav class="nav-profile-actions" aria-label="Profile actions">
+        <button type="button" id="save-profile" class="nav-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/></svg>Save profile</button>
+        <button type="button" id="load-profile" class="nav-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m-4 4 4-4 4 4M4 15v6h16v-6"/></svg>Load profile</button>
+        <input id="profile-file" type="file" accept="application/json,.json" hidden>
+        <button type="button" id="clear-button" class="nav-button danger"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14M10 11v6m4-6v6"/></svg>Clear all</button>
+      </nav>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch to dark mode">
         <svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
         <svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
@@ -30,14 +35,14 @@
 
   <main>
     <section class="intro" aria-labelledby="page-title">
-      <div><p class="eyebrow">A BETTER SIGN-OFF</p><h1 id="page-title">Your signature.<br><span>Your style.</span></h1>
+      <div><p class="eyebrow">A BETTER WAY TO SIGN OFF</p><h1 id="page-title">Your signature.<br><span>Your style.</span></h1>
         <p class="intro-copy">Add your details. Make it yours.<br>Give every email a little more you.</p></div>
       <div class="intro-note"><span class="status-dot" aria-hidden="true"></span> Free. No account needed.<br><span>Built right in your browser.</span></div>
     </section>
 
     <div class="workspace">
       <section class="editor panel" id="editor" aria-labelledby="editor-title">
-        <div class="panel-heading"><div><p class="eyebrow">01 / THE DETAILS</p><h2 id="editor-title">Introduce yourself</h2></div><button type="button" class="text-button" id="example-button">Try example</button></div>
+        <div class="panel-heading"><div><p class="eyebrow">01 / THE DETAILS</p><h2 id="editor-title">Introduce yourself</h2></div><button type="button" class="text-button" id="example-button">TRY EXAMPLE</button></div>
         <form id="signature-form" novalidate>
           <fieldset><legend>Your information</legend>
             <label>Full name <input name="name" id="name" type="text" maxlength="200" autocomplete="name" placeholder="Joe Somebody"></label>
@@ -74,7 +79,7 @@
             <label>Closing note / disclaimer <textarea name="footer" rows="3" maxlength="1200" placeholder="An optional tagline or short disclaimer"></textarea></label>
           </div></details>
 
-          <div class="editor-bottom"><label class="checkbox-label"><input id="remember-draft" type="checkbox"> Remember this draft on this device</label><p id="save-status" class="field-hint" role="status">Your details stay in this browser. No analytics or server uploads.</p><div class="inline-actions"><button type="button" id="save-profile" class="text-button">Save profile</button><label class="text-button" for="profile-file">Load profile<input id="profile-file" type="file" accept="application/json,.json" class="file-input"></label><button type="button" id="clear-button" class="text-button danger">Clear all</button></div></div>
+          <div class="editor-bottom"><label class="checkbox-label"><input id="remember-draft" type="checkbox"> Remember this draft on this device</label><p id="save-status" class="field-hint" role="status">Your details stay in this browser. No analytics or server uploads.</p></div>
         </form>
       </section>
 
@@ -86,7 +91,7 @@
             <label><input type="radio" name="layout-choice" value="stacked"><span><svg viewBox="0 0 36 24" aria-hidden="true"><rect x="2" y="2" width="9" height="7"/><path d="M2 12h31M2 16h18M2 21h26"/></svg>Stacked</span></label>
             <label><input type="radio" name="layout-choice" value="compact"><span><svg viewBox="0 0 36 24" aria-hidden="true"><rect x="2" y="4" width="7" height="10"/><path d="M13 4h20M13 9h16M13 14h20M2 20h31"/></svg>Compact</span></label>
           </fieldset>
-          <div class="preview-tabs" role="tablist" aria-label="Preview format"><button id="tab-signature" type="button" role="tab" aria-selected="true" aria-controls="panel-signature" tabindex="0" data-tab="signature">Signature</button><button id="tab-html" type="button" role="tab" aria-selected="false" aria-controls="panel-html" tabindex="-1" data-tab="html">HTML</button><button id="tab-text" type="button" role="tab" aria-selected="false" aria-controls="panel-text" tabindex="-1" data-tab="text">Plain text</button><span id="example-badge" class="example-badge">Example details</span></div>
+          <div class="preview-tabs" role="tablist" aria-label="Preview format"><button id="tab-signature" type="button" role="tab" aria-selected="true" aria-controls="panel-signature" tabindex="0" data-tab="signature">Signature</button><button id="tab-html" type="button" role="tab" aria-selected="false" aria-controls="panel-html" tabindex="-1" data-tab="html">HTML</button><button id="tab-text" type="button" role="tab" aria-selected="false" aria-controls="panel-text" tabindex="-1" data-tab="text">Plain text</button><span id="example-badge" class="example-badge" hidden>Example details</span></div>
           <div id="panel-signature" role="tabpanel" aria-labelledby="tab-signature">
             <div class="email-window"><div class="email-window-top"><div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div><span>New message</span><span aria-hidden="true">↗</span></div><div class="email-to"><span>To</span> Your next connection</div><div class="email-body"><p class="message-copy">Thanks for your time.<br>Best,</p><div id="signature-preview" class="signature-preview"></div><div id="empty-preview" class="empty-preview" hidden>Add your details to see your signature here.</div></div></div>
           </div>
@@ -97,14 +102,40 @@
         </div>
         <div class="privacy-note"><span aria-hidden="true">↳</span><p><strong>Your details stay with you.</strong> Everything runs locally in your browser. Public logo URLs load images from their host.</p></div>
 
-        <section class="installation" id="installation" aria-labelledby="installation-title"><p class="eyebrow">03 / SIGN, SEALED, SENT</p><h2 id="installation-title">Put it to work</h2><p>Click <strong>Copy signature</strong>, then paste into the signature editor. Save it and send yourself a test email.</p>
-          <details open><summary>Gmail on the web</summary><p>Settings → See all settings → General → Signature. Create a signature, paste it, choose your defaults, then Save Changes.</p><a href="https://support.google.com/mail/answer/8395?hl=en" target="_blank" rel="noopener noreferrer">Google's signature guide ↗</a></details>
-          <details><summary>Outlook / Outlook.com</summary><p>New Outlook and Outlook on the web: Settings → Accounts → Signatures. Classic Outlook: File → Options → Mail → Signatures. Create a signature, paste it, and choose your defaults.</p><a href="https://support.microsoft.com/en-us/outlook/mail/how-to-add-and-change-an-email-signature-in-outlook" target="_blank" rel="noopener noreferrer">Microsoft's signature guide ↗</a></details>
-          <details><summary>Other email clients</summary><p>Use the formatted copy in a rich-text signature editor. If the client accepts an HTML file, download HTML. For a text-only editor, use the Plain text tab or Download text. Formatting and image support vary by client.</p></details>
-          <details><summary>Hosting your logo on GitHub Pages</summary><p>Download the prepared PNG, add it to your repository's <code>assets/</code> folder, and publish the site. Use the direct image address:<br><code>https://USERNAME.github.io/REPOSITORY/assets/logo.png</code></p><p>Keep the image at that address so existing signatures can still load it. Some recipients block remote images until they choose to display them.</p></details>
-        </section>
       </section>
     </div>
+
+    <section class="installation" id="installation" aria-labelledby="installation-title">
+      <div class="installation-heading"><p class="eyebrow">03 / SIGN, SEALED, SENT</p><h2 id="installation-title">Put it to work</h2><p>Click <strong>Copy signature</strong>, then paste into your email client's signature editor. Save it and send yourself a test email.</p></div>
+      <div class="installation-blocks">
+        <article class="installation-block" aria-labelledby="install-gmail">
+          <span class="installation-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+          <h3 id="install-gmail">Gmail</h3>
+          <p>Settings → See all settings → General → Signature. Create a signature, paste it, choose your defaults, then Save Changes.</p>
+          <a href="https://support.google.com/mail/answer/8395?hl=en" target="_blank" rel="noopener noreferrer">Google's signature guide ↗</a>
+        </article>
+        <article class="installation-block" aria-labelledby="install-outlook">
+          <span class="installation-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></svg></span>
+          <h3 id="install-outlook">Outlook</h3>
+          <p>New Outlook and Outlook on the web: Settings → Accounts → Signatures.</p>
+          <p>Classic Outlook: File → Options → Mail → Signatures. Create a signature, paste it, and choose your defaults.</p>
+          <a href="https://support.microsoft.com/en-us/outlook/mail/how-to-add-and-change-an-email-signature-in-outlook" target="_blank" rel="noopener noreferrer">Microsoft's signature guide ↗</a>
+        </article>
+        <article class="installation-block" aria-labelledby="install-other">
+          <span class="installation-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 8h10M7 12h10M7 16h6"/></svg></span>
+          <h3 id="install-other">Other clients</h3>
+          <p>Use the formatted copy in a rich-text signature editor. If your client accepts an HTML file, download HTML.</p>
+          <p>For a text-only editor, use the Plain text tab or Download text. Formatting and image support vary by client.</p>
+        </article>
+        <article class="installation-block" aria-labelledby="install-hosting">
+          <span class="installation-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 18H6a4 4 0 1 1 .7-7.9A6 6 0 0 1 18.3 9 4.5 4.5 0 0 1 18 18h-1M12 20V10m-3 3 3-3 3 3"/></svg></span>
+          <h3 id="install-hosting">Hosting Logos</h3>
+          <p>Download the prepared PNG, add it to your repository's <code>assets/</code> folder, and publish the site. Use the direct image address:</p>
+          <code class="installation-url">https://USERNAME.github.io/REPOSITORY/assets/logo.png</code>
+          <p>Keep that address available so existing signatures can load the logo. Some recipients block remote images until they choose to display them.</p>
+        </article>
+      </div>
+    </section>
   </main>
   <footer class="site-footer"><span>Signature Studio</span><span>A small tool for a lasting impression.</span><span>v1.0.0</span></footer>
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
