@@ -6,10 +6,11 @@
   const form = $('signature-form');
   const storageKey = 'signature-studio-v1';
   const example = {
-    ...Signature.DEFAULTS, name: 'Alex Morgan', title: 'Operations Director',
-    company: 'Northline Co.', phone: '(540) 555-0100', email: 'alex@northline.example',
-    website: 'northline.example', street: '123 Main Street, Suite 200',
-    city: 'Fredericksburg', region: 'VA', postal: '22407'
+    ...Signature.DEFAULTS, name: 'John Doe', title: 'Marketing Manager',
+    company: 'Example Company', phone: '(555) 555-0100', mobile: '(555) 555-0120',
+    email: 'john.doe@example.com', website: 'example.com',
+    street: '123 Example Street, Suite 100', city: 'Anytown', region: 'ST',
+    postal: '12345', country: 'United States'
   };
   let uploadedLogo = '';
   let naturalWidth = 96;
