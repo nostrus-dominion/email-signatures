@@ -9,12 +9,13 @@ Plain HTML, CSS, and JavaScript. No framework, package install, backend, or buil
 - Name, job title, company, office and mobile phone numbers, email, and website.
 - Complete street address, including city, state/region, postal code, and country.
 - Company logos from a public HTTPS image URL or a local PNG, JPG, GIF, or WebP file.
-- Classic, stacked, and compact layouts with custom colors, four email fonts, and text size.
+- Classic, stacked, and compact layouts with custom colors and text size.
+- 14 font choices grouped into Serif, Sans-Serif, and Monospace.
 - Live preview, HTML source, and plain-text views.
 - Formatted clipboard copy, HTML and text downloads, and a manual-copy fallback.
 - Save/load JSON profiles for different people or companies.
 - Starts with empty contact fields and helpful placeholders; **TRY EXAMPLE** loads sample details on demand.
-- Save profile, Load profile, and Clear all controls in the top navigation bar.
+- Save profile and Load profile controls in the top navigation bar; Clear all at the bottom of the details panel.
 - Optional browser-local draft saving. Clear all removes the saved draft as well.
 - Responsive layout, keyboard-accessible controls, and no analytics.
 - Light and dark themes with a sun/moon toggle in the top right.
@@ -24,6 +25,22 @@ Plain HTML, CSS, and JavaScript. No framework, package install, backend, or buil
 The editor starts with your system's color preference. Click the moon to switch to dark mode, or the sun to switch back to light mode. Your choice is remembered on this device, independently of saved signature drafts.
 
 The email preview keeps the signature on white email paper so its colors match the exported HTML. Theme settings apply to the editor and are not included in saved profiles or exported signatures.
+
+## Fonts and licensing
+
+The font menu groups 14 choices by style:
+
+| Group | Fonts |
+| --- | --- |
+| Serif | Cambria, Constantia, Georgia, Palatino Linotype, Times New Roman |
+| Sans-Serif | Arial, Calibri, Segoe UI, Tahoma, Trebuchet MS, Verdana |
+| Monospace | Consolas, Courier New, Lucida Console |
+
+Signatures request fonts already installed on the device using inline CSS font stacks. Each choice includes alternatives and a matching generic family (`serif`, `sans-serif`, or `monospace`), so a missing font can fall back to a similar style. Appearance can vary between your browser and recipients' email clients.
+
+The app does not bundle, download, or embed font files. Microsoft permits referencing Windows-supplied font names in CSS font stacks, even when the publisher does not use Windows; see its [font redistribution FAQ, Web section](https://learn.microsoft.com/en-us/typography/fonts/font-faq#web). Font files remain subject to their owners' licenses.
+
+Existing profiles keep the original Arial, Verdana, Georgia, and Trebuchet MS choices; Arial remains the default.
 
 ## Run it
 

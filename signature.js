@@ -5,11 +5,22 @@
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
   'use strict';
 
+  // Font names reference installed typefaces; font files are never bundled or embedded.
   const FONTS = Object.freeze({
-    arial: 'Arial, Helvetica, sans-serif',
-    verdana: 'Verdana, Geneva, sans-serif',
+    cambria: 'Cambria, Georgia, Times New Roman, serif',
+    constantia: 'Constantia, Georgia, Times New Roman, serif',
     georgia: 'Georgia, Times New Roman, serif',
-    trebuchet: 'Trebuchet MS, Arial, sans-serif'
+    palatino: 'Palatino Linotype, Book Antiqua, Palatino, Georgia, serif',
+    times: 'Times New Roman, Times, serif',
+    arial: 'Arial, Helvetica, sans-serif',
+    calibri: 'Calibri, Arial, Helvetica, sans-serif',
+    segoe: 'Segoe UI, Arial, Helvetica, sans-serif',
+    tahoma: 'Tahoma, Geneva, Arial, sans-serif',
+    trebuchet: 'Trebuchet MS, Arial, sans-serif',
+    verdana: 'Verdana, Geneva, sans-serif',
+    consolas: 'Consolas, Menlo, Monaco, Courier New, monospace',
+    courier: 'Courier New, Courier, monospace',
+    lucida: 'Lucida Console, Monaco, Courier New, monospace'
   });
   const DEFAULTS = Object.freeze({
     name: '', title: '', company: '', phone: '', mobile: '', email: '', website: '',

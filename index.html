@@ -24,7 +24,6 @@
         <button type="button" id="save-profile" class="nav-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/></svg>Save profile</button>
         <button type="button" id="load-profile" class="nav-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m-4 4 4-4 4 4M4 15v6h16v-6"/></svg>Load profile</button>
         <input id="profile-file" type="file" accept="application/json,.json" hidden>
-        <button type="button" id="clear-button" class="nav-button danger"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14M10 11v6m4-6v6"/></svg>Clear all</button>
       </nav>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch to dark mode">
         <svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
@@ -73,13 +72,41 @@
           </div></details>
 
           <details class="editor-section"><summary><span>Style &amp; finishing touches</span></summary><div class="details-content">
-            <div class="field-grid"><label>Accent color <div class="color-control"><input name="accent" id="accent" type="color" value="#285847" aria-label="Accent color"><input id="accent-hex" type="text" value="#285847" maxlength="7" pattern="#[a-fA-F0-9]{6}" aria-label="Accent color hex code"></div></label><label>Font <select name="font"><option value="arial">Arial</option><option value="verdana">Verdana</option><option value="georgia">Georgia</option><option value="trebuchet">Trebuchet MS</option></select></label></div>
+            <div class="field-grid"><label>Accent color <div class="color-control"><input name="accent" id="accent" type="color" value="#285847" aria-label="Accent color"><input id="accent-hex" type="text" value="#285847" maxlength="7" pattern="#[a-fA-F0-9]{6}" aria-label="Accent color hex code"></div></label><label>Font <select name="font" aria-describedby="font-help">
+              <optgroup label="Serif">
+                <option value="cambria">Cambria</option>
+                <option value="constantia">Constantia</option>
+                <option value="georgia">Georgia</option>
+                <option value="palatino">Palatino Linotype</option>
+                <option value="times">Times New Roman</option>
+              </optgroup>
+              <optgroup label="Sans-Serif">
+                <option value="arial" selected>Arial</option>
+                <option value="calibri">Calibri</option>
+                <option value="segoe">Segoe UI</option>
+                <option value="tahoma">Tahoma</option>
+                <option value="trebuchet">Trebuchet MS</option>
+                <option value="verdana">Verdana</option>
+              </optgroup>
+              <optgroup label="Monospace">
+                <option value="consolas">Consolas</option>
+                <option value="courier">Courier New</option>
+                <option value="lucida">Lucida Console</option>
+              </optgroup>
+            </select></label></div>
+            <p id="font-help" class="field-hint">Fonts vary by device. Your email client uses a similar fallback when a font is unavailable.</p>
             <label>Text size <select name="fontSize"><option value="11">11 px</option><option value="12">12 px</option><option value="13" selected>13 px</option><option value="14">14 px</option><option value="15">15 px</option><option value="16">16 px</option></select></label>
             <label class="checkbox-label"><input name="showLabels" type="checkbox" checked> Show contact labels</label>
             <label>Closing note / disclaimer <textarea name="footer" rows="3" maxlength="1200" placeholder="An optional tagline or short disclaimer"></textarea></label>
           </div></details>
 
-          <div class="editor-bottom"><label class="checkbox-label"><input id="remember-draft" type="checkbox"> Remember this draft on this device</label><p id="save-status" class="field-hint" role="status">Your details stay in this browser. No analytics or server uploads.</p></div>
+          <div class="editor-bottom">
+            <div class="editor-bottom-row">
+              <label class="checkbox-label"><input id="remember-draft" type="checkbox"> Remember this draft on this device</label>
+              <button type="button" id="clear-button" class="text-button danger clear-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14M10 11v6m4-6v6"/></svg>Clear all</button>
+            </div>
+            <p id="save-status" class="field-hint" role="status">Your details stay in this browser. No analytics or server uploads.</p>
+          </div>
         </form>
       </section>
 
