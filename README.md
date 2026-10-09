@@ -13,6 +13,8 @@ Plain HTML, CSS, and JavaScript. No framework, package install, backend, or buil
 - Live preview, HTML source, and plain-text views.
 - Formatted clipboard copy, HTML and text downloads, and a manual-copy fallback.
 - Save/load JSON profiles for different people or companies.
+- Starts with empty contact fields and helpful placeholders; **TRY EXAMPLE** loads sample details on demand.
+- Save profile, Load profile, and Clear all controls in the top navigation bar.
 - Optional browser-local draft saving. Clear all removes the saved draft as well.
 - Responsive layout, keyboard-accessible controls, and no analytics.
 - Light and dark themes with a sun/moon toggle in the top right.
@@ -86,7 +88,7 @@ References: [Google's signature image troubleshooting](https://support.google.co
 
 ## Install your signature
 
-1. Replace the clearly labeled example details with your own.
+1. Enter your details in the empty fields. Use **TRY EXAMPLE** if you want to explore a sample signature first.
 2. Choose a layout and style; blank optional fields are omitted.
 3. Use **Copy signature** in the Signature tab, then paste normally into a rich-text signature editor. Do not use “paste as plain text” if you want the formatting and logo.
 4. Save the signature, choose it for new messages and/or replies, and send yourself a test email.

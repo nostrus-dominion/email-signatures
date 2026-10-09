@@ -15,7 +15,7 @@
   let naturalWidth = 96;
   let naturalHeight = 96;
   let activeTab = 'signature';
-  let usingExample = true;
+  let usingExample = false;
   let logoState = 'idle';
   let logoToken = 0;
   let uploadToken = 0;
@@ -377,7 +377,7 @@
     clearTimeout(saveTimer);
     let removed = true;
     try { localStorage.removeItem(storageKey); } catch { removed = false; }
-    setData(Signature.DEFAULTS);
+    setData({});
     $('save-status').textContent = removed ? 'Your details stay in this browser. No analytics or server uploads.' : 'Current details cleared. Clear this site’s browser storage to remove the saved draft.';
     $('name').focus();
     notify('Details cleared.');
@@ -401,6 +401,7 @@
     download(JSON.stringify({ version: 1, data }, null, 2) + '\n', filename(data, 'json'), 'application/json');
     notify('Profile downloaded. Use Load profile to edit it later.');
   });
+  $('load-profile').addEventListener('click', () => $('profile-file').click());
   $('profile-file').addEventListener('change', async event => {
     const file = event.target.files[0];
     if (!file) return;
@@ -424,7 +425,7 @@
         $('remember-draft').checked = true;
         usingExample = false;
         setData(profile.data);
-      } else setData(example);
-    } else setData(example);
-  } catch { setData(example); }
+      } else setData({});
+    } else setData({});
+  } catch { setData({}); }
 })();
