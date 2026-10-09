@@ -73,7 +73,29 @@
           </div></details>
 
           <details class="editor-section"><summary><span>Style &amp; finishing touches</span></summary><div class="details-content">
-            <div class="field-grid"><label>Accent color <div class="color-control"><input name="accent" id="accent" type="color" value="#285847" aria-label="Accent color"><input id="accent-hex" type="text" value="#285847" maxlength="7" pattern="#[a-fA-F0-9]{6}" aria-label="Accent color hex code"></div></label><label>Font <select name="font"><option value="arial">Arial</option><option value="verdana">Verdana</option><option value="georgia">Georgia</option><option value="trebuchet">Trebuchet MS</option></select></label></div>
+            <div class="field-grid"><label>Accent color <div class="color-control"><input name="accent" id="accent" type="color" value="#285847" aria-label="Accent color"><input id="accent-hex" type="text" value="#285847" maxlength="7" pattern="#[a-fA-F0-9]{6}" aria-label="Accent color hex code"></div></label><label>Font <select name="font" aria-describedby="font-help">
+              <optgroup label="Serif">
+                <option value="cambria">Cambria</option>
+                <option value="constantia">Constantia</option>
+                <option value="georgia">Georgia</option>
+                <option value="palatino">Palatino Linotype</option>
+                <option value="times">Times New Roman</option>
+              </optgroup>
+              <optgroup label="Sans-Serif">
+                <option value="arial" selected>Arial</option>
+                <option value="calibri">Calibri</option>
+                <option value="segoe">Segoe UI</option>
+                <option value="tahoma">Tahoma</option>
+                <option value="trebuchet">Trebuchet MS</option>
+                <option value="verdana">Verdana</option>
+              </optgroup>
+              <optgroup label="Monospace">
+                <option value="consolas">Consolas</option>
+                <option value="courier">Courier New</option>
+                <option value="lucida">Lucida Console</option>
+              </optgroup>
+            </select></label></div>
+            <p id="font-help" class="field-hint">Fonts vary by device. Your email client uses a similar fallback when a font is unavailable.</p>
             <label>Text size <select name="fontSize"><option value="11">11 px</option><option value="12">12 px</option><option value="13" selected>13 px</option><option value="14">14 px</option><option value="15">15 px</option><option value="16">16 px</option></select></label>
             <label class="checkbox-label"><input name="showLabels" type="checkbox" checked> Show contact labels</label>
             <label>Closing note / disclaimer <textarea name="footer" rows="3" maxlength="1200" placeholder="An optional tagline or short disclaimer"></textarea></label>
