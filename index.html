@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Create a custom email signature with your company logo, contact details, and clickable links. Free, private, and ready to copy into your email client.">
+  <meta name="theme-color" content="#285847">
+  <title>Signature Studio — Email signature creator</title>
+  <script src="./theme.js"></script>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./signature.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#editor">Skip to signature editor</a>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Signature Studio home">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M7 21c3-4 10-14 13-13 5 2-8 15-6 17 2 2 7-8 10-6 1 1-1 4 2 4M5 27h22"/></svg></span>
+      <span>Signature<span class="brand-light"> Studio</span></span>
+    </a>
+    <div class="header-actions">
+      <a class="header-link" href="#installation">How to use it <span aria-hidden="true">↗</span></a>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch to dark mode">
+        <svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        <svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div><p class="eyebrow">A BETTER SIGN-OFF</p><h1 id="page-title">Your signature.<br><span>Your style.</span></h1>
+        <p class="intro-copy">Add your details. Make it yours.<br>Give every email a little more you.</p></div>
+      <div class="intro-note"><span class="status-dot" aria-hidden="true"></span> Free. No account needed.<br><span>Built right in your browser.</span></div>
+    </section>
+
+    <div class="workspace">
+      <section class="editor panel" id="editor" aria-labelledby="editor-title">
+        <div class="panel-heading"><div><p class="eyebrow">01 / THE DETAILS</p><h2 id="editor-title">Introduce yourself</h2></div><button type="button" class="text-button" id="example-button">Try example</button></div>
+        <form id="signature-form" novalidate>
+          <fieldset><legend>Your information</legend>
+            <label>Full name <input name="name" id="name" type="text" maxlength="200" autocomplete="name" placeholder="Joe Somebody"></label>
+            <div class="field-grid"><label>Job title <input name="title" type="text" maxlength="200" autocomplete="organization-title" placeholder="Director of Stuff"></label><label>Company <input name="company" type="text" maxlength="200" autocomplete="organization" placeholder="Stuff and Things Inc."></label></div>
+            <div class="field-grid"><label>Office phone <input name="phone" type="tel" maxlength="100" autocomplete="tel" placeholder="(888) 555-0110"></label><label>Mobile phone <input name="mobile" type="tel" maxlength="100" placeholder="(202) 555-0120"></label></div>
+            <label>Email address <input name="email" type="email" maxlength="254" autocomplete="email" placeholder="jsomebody@stuffandthings.url"></label>
+            <label>Website <input name="website" type="text" inputmode="url" maxlength="500" autocomplete="url" placeholder="stuffandthings.url"></label>
+          </fieldset>
+
+          <details class="editor-section"><summary><span>Street address</span><span class="optional">Optional</span></summary><div class="details-content">
+            <label>Street / suite <input name="street" type="text" maxlength="250" autocomplete="street-address" placeholder="123 Main Street, Suite 200"></label>
+            <div class="field-grid"><label>City <input name="city" type="text" maxlength="100" autocomplete="address-level2" placeholder="Someplace"></label><label>State / region <input name="region" type="text" maxlength="100" autocomplete="address-level1" placeholder="US"></label></div>
+            <div class="field-grid"><label>ZIP / postal code <input name="postal" type="text" maxlength="30" autocomplete="postal-code" placeholder="22222"></label><label>Country <input name="country" type="text" maxlength="100" autocomplete="country-name" placeholder="United States"></label></div>
+          </div></details>
+
+          <details class="editor-section" open><summary><span>Company logo</span><span class="optional">Optional</span></summary><div class="details-content">
+            <label>Public image URL <input name="logoUrl" id="logo-url" type="text" inputmode="url" maxlength="500" placeholder="https://your-site.com/logo.png" aria-describedby="logo-help"></label>
+            <p class="field-hint" id="logo-help">Use a direct HTTPS link to a PNG, JPG, or GIF. The image must be viewable without signing in.</p>
+            <div class="upload-row"><label class="upload-button" for="logo-file"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 16V4m-4 4 4-4 4 4M4 15v5h16v-5"/></svg> Choose image<input id="logo-file" type="file" accept="image/png,image/jpeg,image/gif,image/webp" class="file-input"></label><span id="logo-file-name" class="file-name">or preview a local file</span></div>
+            <p class="field-hint">Choosing a file keeps it in your browser. It does not upload or publish it.</p>
+            <div id="logo-settings" hidden>
+              <div class="range-heading"><label for="logo-width">Maximum logo width</label><output id="logo-width-value" for="logo-width">96 px</output></div>
+              <input name="logoWidth" id="logo-width" type="range" min="48" max="180" value="96">
+              <p class="field-hint">Proportions stay intact. Height is capped at 100 px.</p>
+              <label>Image description <input name="logoAlt" type="text" maxlength="200" placeholder="Company logo"></label>
+              <div id="upload-options" hidden><label>Image export <select name="logoMode" id="logo-mode"><option value="hosted">Public image URL (recommended)</option><option value="embedded">Embed uploaded image (limited support)</option></select></label><button type="button" id="download-logo" class="text-button">Download prepared PNG</button></div><button type="button" id="remove-logo" class="text-button danger">Remove image</button>
+            </div>
+          </div></details>
+
+          <details class="editor-section"><summary><span>Style &amp; finishing touches</span></summary><div class="details-content">
+            <div class="field-grid"><label>Accent color <div class="color-control"><input name="accent" id="accent" type="color" value="#285847" aria-label="Accent color"><input id="accent-hex" type="text" value="#285847" maxlength="7" pattern="#[a-fA-F0-9]{6}" aria-label="Accent color hex code"></div></label><label>Font <select name="font"><option value="arial">Arial</option><option value="verdana">Verdana</option><option value="georgia">Georgia</option><option value="trebuchet">Trebuchet MS</option></select></label></div>
+            <label>Text size <select name="fontSize"><option value="11">11 px</option><option value="12">12 px</option><option value="13" selected>13 px</option><option value="14">14 px</option><option value="15">15 px</option><option value="16">16 px</option></select></label>
+            <label class="checkbox-label"><input name="showLabels" type="checkbox" checked> Show contact labels</label>
+            <label>Closing note / disclaimer <textarea name="footer" rows="3" maxlength="1200" placeholder="An optional tagline or short disclaimer"></textarea></label>
+          </div></details>
+
+          <div class="editor-bottom"><label class="checkbox-label"><input id="remember-draft" type="checkbox"> Remember this draft on this device</label><p id="save-status" class="field-hint" role="status">Your details stay in this browser. No analytics or server uploads.</p><div class="inline-actions"><button type="button" id="save-profile" class="text-button">Save profile</button><label class="text-button" for="profile-file">Load profile<input id="profile-file" type="file" accept="application/json,.json" class="file-input"></label><button type="button" id="clear-button" class="text-button danger">Clear all</button></div></div>
+        </form>
+      </section>
+
+      <section class="preview-column" aria-labelledby="preview-title">
+        <div class="panel preview-panel">
+          <div class="panel-heading"><div><p class="eyebrow">02 / MAKE IT YOURS</p><h2 id="preview-title">The finishing touch</h2></div><span class="live-badge"><span class="status-dot" aria-hidden="true"></span> Live preview</span></div>
+          <fieldset class="layout-picker"><legend>Signature layout</legend>
+            <label><input type="radio" name="layout-choice" value="classic" checked><span><svg viewBox="0 0 36 24" aria-hidden="true"><rect x="2" y="5" width="9" height="12"/><path d="M16 3v18M21 5h12M21 10h8M21 15h12M21 20h9"/></svg>Classic</span></label>
+            <label><input type="radio" name="layout-choice" value="stacked"><span><svg viewBox="0 0 36 24" aria-hidden="true"><rect x="2" y="2" width="9" height="7"/><path d="M2 12h31M2 16h18M2 21h26"/></svg>Stacked</span></label>
+            <label><input type="radio" name="layout-choice" value="compact"><span><svg viewBox="0 0 36 24" aria-hidden="true"><rect x="2" y="4" width="7" height="10"/><path d="M13 4h20M13 9h16M13 14h20M2 20h31"/></svg>Compact</span></label>
+          </fieldset>
+          <div class="preview-tabs" role="tablist" aria-label="Preview format"><button id="tab-signature" type="button" role="tab" aria-selected="true" aria-controls="panel-signature" tabindex="0" data-tab="signature">Signature</button><button id="tab-html" type="button" role="tab" aria-selected="false" aria-controls="panel-html" tabindex="-1" data-tab="html">HTML</button><button id="tab-text" type="button" role="tab" aria-selected="false" aria-controls="panel-text" tabindex="-1" data-tab="text">Plain text</button><span id="example-badge" class="example-badge">Example details</span></div>
+          <div id="panel-signature" role="tabpanel" aria-labelledby="tab-signature">
+            <div class="email-window"><div class="email-window-top"><div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div><span>New message</span><span aria-hidden="true">↗</span></div><div class="email-to"><span>To</span> Your next connection</div><div class="email-body"><p class="message-copy">Thanks for your time.<br>Best,</p><div id="signature-preview" class="signature-preview"></div><div id="empty-preview" class="empty-preview" hidden>Add your details to see your signature here.</div></div></div>
+          </div>
+          <div id="panel-html" role="tabpanel" aria-labelledby="tab-html" hidden><textarea id="html-output" class="code-output" readonly aria-label="Signature HTML source" spellcheck="false"></textarea><p class="output-hint">For clients that accept HTML source. Most signature editors need the formatted copy.</p></div>
+          <div id="panel-text" role="tabpanel" aria-labelledby="tab-text" hidden><textarea id="text-output" class="code-output plain-output" readonly aria-label="Plain text signature"></textarea><p class="output-hint">A simple fallback for mobile apps and clients that only accept text.</p></div>
+          <div id="signature-warnings" class="warnings" role="status" hidden></div>
+          <div class="export-area"><button type="button" id="copy-signature" class="primary-button"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V3H3v13h5"/></svg><span>Copy signature</span><span class="button-arrow" aria-hidden="true">↗</span></button><div class="download-actions"><button type="button" id="download-html" class="secondary-button">Download HTML</button><button type="button" id="copy-html" class="secondary-button">Copy HTML</button><button type="button" id="download-text" class="secondary-button">Download text</button></div><p class="export-hint">Copy, then paste into your email client's signature settings.</p></div>
+        </div>
+        <div class="privacy-note"><span aria-hidden="true">↳</span><p><strong>Your details stay with you.</strong> Everything runs locally in your browser. Public logo URLs load images from their host.</p></div>
+
+        <section class="installation" id="installation" aria-labelledby="installation-title"><p class="eyebrow">03 / SIGN, SEALED, SENT</p><h2 id="installation-title">Put it to work</h2><p>Click <strong>Copy signature</strong>, then paste into the signature editor. Save it and send yourself a test email.</p>
+          <details open><summary>Gmail on the web</summary><p>Settings → See all settings → General → Signature. Create a signature, paste it, choose your defaults, then Save Changes.</p><a href="https://support.google.com/mail/answer/8395?hl=en" target="_blank" rel="noopener noreferrer">Google's signature guide ↗</a></details>
+          <details><summary>Outlook / Outlook.com</summary><p>New Outlook and Outlook on the web: Settings → Accounts → Signatures. Classic Outlook: File → Options → Mail → Signatures. Create a signature, paste it, and choose your defaults.</p><a href="https://support.microsoft.com/en-us/outlook/mail/how-to-add-and-change-an-email-signature-in-outlook" target="_blank" rel="noopener noreferrer">Microsoft's signature guide ↗</a></details>
+          <details><summary>Other email clients</summary><p>Use the formatted copy in a rich-text signature editor. If the client accepts an HTML file, download HTML. For a text-only editor, use the Plain text tab or Download text. Formatting and image support vary by client.</p></details>
+          <details><summary>Hosting your logo on GitHub Pages</summary><p>Download the prepared PNG, add it to your repository's <code>assets/</code> folder, and publish the site. Use the direct image address:<br><code>https://USERNAME.github.io/REPOSITORY/assets/logo.png</code></p><p>Keep the image at that address so existing signatures can still load it. Some recipients block remote images until they choose to display them.</p></details>
+        </section>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer"><span>Signature Studio</span><span>A small tool for a lasting impression.</span><span>v1.0.0</span></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="copy-dialog" aria-labelledby="dialog-title" aria-describedby="copy-dialog-help"><form method="dialog"><div class="dialog-heading"><h2 id="dialog-title">Copy your signature</h2><button aria-label="Close" class="dialog-close">×</button></div><p id="copy-dialog-help">Your browser blocked automatic copying. Select the signature below and press Ctrl+C (⌘C on Mac). On a phone, touch and hold to select it.</p><div id="manual-copy" class="manual-copy" contenteditable="true" role="textbox" aria-label="Signature to copy" aria-multiline="true" spellcheck="false"></div><p class="field-hint">Then paste it into your email client's signature settings.</p><button class="secondary-button">Done</button></form></dialog>
+  <noscript><div class="noscript">Enable JavaScript to use the signature editor. The downloaded signatures themselves do not need JavaScript.</div></noscript>
+</body>
+</html>
