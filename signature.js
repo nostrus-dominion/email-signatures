@@ -20,6 +20,7 @@
     verdana: 'Verdana, Geneva, sans-serif',
     consolas: 'Consolas, Menlo, Monaco, Courier New, monospace',
     courier: 'Courier New, Courier, monospace',
+    iosevka: 'Iosevka, Consolas, Menlo, Monaco, Courier New, monospace',
     lucida: 'Lucida Console, Monaco, Courier New, monospace'
   });
   const DEFAULTS = Object.freeze({

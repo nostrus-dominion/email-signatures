@@ -10,7 +10,7 @@ Plain HTML, CSS, and JavaScript. No framework, package install, backend, or buil
 - Complete street address, including city, state/region, postal code, and country.
 - Company logos from a public HTTPS image URL or a local PNG, JPG, GIF, or WebP file.
 - Classic, stacked, and compact layouts with custom colors and text size.
-- 14 font choices grouped into Serif, Sans-Serif, and Monospace.
+- 15 font choices grouped into Serif, Sans-Serif, and Monospace.
 - Live preview, HTML source, and plain-text views.
 - Formatted clipboard copy, HTML and text downloads, and a manual-copy fallback.
 - Save/load JSON profiles for different people or companies.
@@ -28,17 +28,19 @@ The email preview keeps the signature on white email paper so its colors match t
 
 ## Fonts and licensing
 
-The font menu groups 14 choices by style:
+The font menu groups 15 choices by style:
 
 | Group | Fonts |
 | --- | --- |
 | Serif | Cambria, Constantia, Georgia, Palatino Linotype, Times New Roman |
 | Sans-Serif | Arial, Calibri, Segoe UI, Tahoma, Trebuchet MS, Verdana |
-| Monospace | Consolas, Courier New, Lucida Console |
+| Monospace | Consolas, Courier New, Iosevka, Lucida Console |
 
 Signatures request fonts already installed on the device using inline CSS font stacks. Each choice includes alternatives and a matching generic family (`serif`, `sans-serif`, or `monospace`), so a missing font can fall back to a similar style. Appearance can vary between your browser and recipients' email clients.
 
 The app does not bundle, download, or embed font files. Microsoft permits referencing Windows-supplied font names in CSS font stacks, even when the publisher does not use Windows; see its [font redistribution FAQ, Web section](https://learn.microsoft.com/en-us/typography/fonts/font-faq#web). Font files remain subject to their owners' licenses.
+
+Iosevka is licensed under the [SIL Open Font License 1.1](https://github.com/be5invis/Iosevka/blob/main/LICENSE.md). Install the standard Iosevka family from its [official releases](https://github.com/be5invis/Iosevka/releases) to see it in the editor. Recipients also need Iosevka installed to see that exact typeface; otherwise the signature uses its monospace fallbacks.
 
 Existing profiles keep the original Arial, Verdana, Georgia, and Trebuchet MS choices; Arial remains the default.
 
