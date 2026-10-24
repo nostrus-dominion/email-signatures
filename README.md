@@ -1,6 +1,6 @@
 # Signature Studio
 
-A custom email signature creator you can host on GitHub Pages. Enter your contact details, add a company logo, choose a layout, and copy the formatted signature into your email client.
+A custom email signature creator hosted on GitHub Pages at **https://nostrus-dominion.github.io/email-signatures/**. Enter your contact details, add a company logo, choose a layout, and copy the formatted signature into your email client.
 
 Plain HTML, CSS, and JavaScript. No framework, package install, backend, or build step.
 
@@ -56,20 +56,20 @@ Open <http://localhost:8000>.
 
 ## Publish on GitHub Pages
 
-1. Create a repository named `email-signature-creator` (or choose another name).
+1. Use the `email-signatures` repository (or fork it under your own account).
 2. Put this project's files directly in the repository root, with `index.html` at the top level. Include `.nojekyll` and `.gitattributes`.
 3. Commit and push to `main`.
 4. Open **Settings → Pages**.
 5. Under **Build and deployment**, choose **Deploy from a branch**.
 6. Select **main** and **/ (root)**, then save.
 
-GitHub will show your published address. For a repository named `email-signature-creator` under `nostrus-dominion`, the expected address is:
+For this repository, the GitHub Pages address is:
 
 ```text
-https://nostrus-dominion.github.io/email-signature-creator/
+https://nostrus-dominion.github.io/email-signatures/
 ```
 
-This address is an example until you publish the repository. All app assets use relative paths, so both project sites and a `USERNAME.github.io` repository work.
+GitHub Pages must be enabled under **Settings → Pages** for the site to be accessible. If you fork the project, adjust the URL to match your account and repository name. All app assets use relative paths.
 
 Official setup reference: [GitHub Pages publishing source](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 
@@ -80,7 +80,7 @@ Official setup reference: [GitHub Pages publishing source](https://docs.github.c
 Use a direct HTTPS image address that can be opened without signing in, such as:
 
 ```text
-https://nostrus-dominion.github.io/email-signature-creator/assets/logo.png
+https://nostrus-dominion.github.io/email-signatures/assets/logo.png
 ```
 
 To host your own logo with the app:
